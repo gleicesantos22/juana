@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Thank You</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --yt-red: #ff0000;
+        --yt-dark: #0f0f0f;
+        --yt-card: #181818;
+        --yt-text: #f1f1f1;
+        --yt-muted: #aaaaaa;
+        --radius: 16px;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial,
+          sans-serif;
+        background: radial-gradient(
+            1200px 600px at 10% -10%,
+            rgba(255, 0, 0, 0.08),
+            transparent 60%
+          ),
+          radial-gradient(
+            1000px 500px at 110% 10%,
+            rgba(255, 0, 0, 0.06),
+            transparent 60%
+          ),
+          var(--yt-dark);
+        color: var(--yt-text);
+      }
+      .wrap {
+        min-height: 100%;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: 100%;
+        max-width: 720px;
+        background: linear-gradient(180deg, #1b1b1b 0%, #141414 100%);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 32px;
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .card::after {
+        content: "";
+        position: absolute;
+        inset: auto -40px -40px auto;
+        width: 160px;
+        height: 160px;
+        background: radial-gradient(
+          80px 80px at 50% 50%,
+          rgba(255, 0, 0, 0.18),
+          transparent 60%
+        );
+        rotate: 15deg;
+        pointer-events: none;
+        z-index: -1;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 8px;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 0 6px 18px rgba(255, 0, 0, 0.25);
+        position: relative;
+      }
+      .logo::before {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        background: var(--yt-red);
+        border-radius: 7px;
+      }
+      .logo svg {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        z-index: 1;
+      }
+      h1 {
+        font-size: clamp(26px, 2.2vw + 14px, 34px);
+        line-height: 1.15;
+        margin: 6px 0 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      p.lead {
+        margin: 0 0 22px;
+        color: var(--yt-muted);
+        font-size: clamp(14px, 1vw + 10px, 16px);
+        line-height: 1.6;
+      }
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: var(--yt-red);
+        color: #fff;
+        border: none;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        font-size: 16px;
+        padding: 14px 22px;
+        border-radius: 999px;
+        box-shadow: 0 10px 20px rgba(255, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        transition: transform 0.08s ease, box-shadow 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .cta:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 14px 26px rgba(255, 0, 0, 0.28),
+          inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+      .cta:active {
+        transform: translateY(0);
+        box-shadow: 0 8px 18px rgba(255, 0, 0, 0.22),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+      .cta svg {
+        width: 18px;
+        height: 18px;
+      }
+      .note {
+        margin-top: 18px;
+        font-size: 13px;
+        color: #bdbdbd;
+      }
+      .divider {
+        height: 1px;
+        width: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.08),
+          transparent
+        );
+        margin: 22px 0;
+      }
+      .meta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 12px;
+        color: #9a9a9a;
+      }
+      .badge {
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 999px;
+        background: #121212;
+      }
+      @media (max-width: 480px) {
+        .card {
+          padding: 24px;
+        }
+        .meta {
+          gap: 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card">
+        <!-- <div class="brand">
+        <span class="logo">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M9 7.5v9l7.5-4.5L9 7.5z" fill="white"/>
+          </svg>
+        </span>
+        <strong>Video Access</strong>
+      </div> -->
+        <h1>You’re in! 🎉</h1>
+        <p class="lead">
+          Thanks for your purchase. Click the button below to access your
+          account.
+        </p>
+        <a
+          class="cta"
+          href="https://app.paidclicks.online/"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M8 5v14l11-7L8 5z" fill="white" />
+          </svg>
+          Access Now
+        </a>
+        <p class="note">
+          We’ve also sent your access details to your email. If you don’t see
+          it, check the spam folder.
+        </p>
+        <div class="divider"></div>
+        <div class="meta">
+          <span class="badge">Secure Access</span>
+          <span class="badge">Instant Start</span>
+          <span class="badge">Lifetime Updates</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
